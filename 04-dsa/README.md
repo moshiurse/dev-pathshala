@@ -18,6 +18,11 @@
 | ৮ | সার্চিং অ্যালগরিদম | [searching.md](./searching.md) | Binary Search, Linear Search |
 | ৯ | ডাইনামিক প্রোগ্রামিং | [dynamic-programming.md](./dynamic-programming.md) | মেমোইজেশন ও ট্যাবুলেশন |
 | ১০ | Big O নোটেশন | [big-o.md](./big-o.md) | টাইম ও স্পেস কমপ্লেক্সিটি |
+| ১১ | হিপ ও প্রায়োরিটি কিউ | [heap.md](./heap.md) | Min/Max-Heap, Heapify, Heap Sort |
+| ১২ | ট্রাই | [trie.md](./trie.md) | Trie Insert/Search, Autocomplete |
+| ১৩ | গ্রিডি অ্যালগরিদম | [greedy.md](./greedy.md) | Activity Selection, Fractional Knapsack, Huffman |
+| ১৪ | ব্যাকট্র্যাকিং | [backtracking.md](./backtracking.md) | N-Queens, Sudoku Solver, Subset Sum |
+| ১৫ | বিট ম্যানিপুলেশন | [bit-manipulation.md](./bit-manipulation.md) | Bitwise Operators, Common Tricks |
 
 ---
 

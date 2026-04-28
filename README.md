@@ -19,6 +19,8 @@
 | ৮ | [ক্লিন কোড ও রিফ্যাক্টরিং](./08-clean-code/README.md) | `08-clean-code/` | পরিষ্কার কোড লেখার কৌশল ও রিফ্যাক্টরিং |
 | ৯ | [টেস্টিং](./09-testing/README.md) | `09-testing/` | Unit, Integration, E2E টেস্টিং কৌশল |
 | ১০ | [DevOps ও CI/CD](./10-devops/README.md) | `10-devops/` | ডেপ্লয়মেন্ট, কন্টেইনার, পাইপলাইন |
+| ১১ | [সিকিউরিটি](./11-security/README.md) | `11-security/` | OWASP, XSS/CSRF, এনক্রিপশন, OAuth/JWT |
+| ১২ | [কনকারেন্সি ও ডিস্ট্রিবিউটেড সিস্টেম](./12-concurrency/README.md) | `12-concurrency/` | Race Conditions, Saga, Consensus, Event Loop |
 
 ---
 

@@ -16,6 +16,10 @@
 | ৫ | NoSQL ডাটাবেস | [nosql.md](./nosql.md) | MongoDB, Redis, Cassandra, Neo4j, Elasticsearch, CAP Theorem, Polyglot Persistence |
 | ৬ | ডাটাবেস রিলেশনশিপ | [relationships.md](./relationships.md) | 1:1, 1:N, M:N, Polymorphic, Self-Referencing (4 Tree Strategies), Soft Deletes |
 | ৭ | মাইগ্রেশন স্ট্র্যাটেজি | [migration.md](./migration.md) | Zero-Downtime Migration, Large Table, Multi-tenant, Rollback, Cross-DB |
+| ৮ | রেপ্লিকেশন | [replication.md](./replication.md) | Master-Slave, Master-Master, Sync vs Async, Failover |
+| ৯ | শার্ডিং | [sharding.md](./sharding.md) | Horizontal vs Vertical, Shard Key, Consistent Hashing |
+| ১০ | কানেকশন পুলিং | [connection-pooling.md](./connection-pooling.md) | Pool Configuration, PDO Persistent, pg-pool |
+| ১১ | কোয়েরি এক্সিকিউশন প্ল্যান | [query-execution-plan.md](./query-execution-plan.md) | EXPLAIN/ANALYZE, Index Usage, Optimization |
 
 ---
 

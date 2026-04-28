@@ -15,6 +15,9 @@
 | ৪ | TDD | [tdd.md](./tdd.md) | Red-Green-Refactor, Inside-Out vs Outside-In, BDD (Behat/Cucumber), TDD Kata |
 | ৫ | মকিং ও স্টাবিং | [mocking.md](./mocking.md) | ৫ Test Doubles (Dummy/Stub/Spy/Mock/Fake), Mockery, Laravel Fakes, Over-mocking |
 | ৬ | টেস্ট কভারেজ | [test-coverage.md](./test-coverage.md) | ৬ Coverage Types, Mutation Testing (Infection/Stryker), CI Thresholds, SonarQube |
+| ৭ | পারফরম্যান্স টেস্টিং | [performance-testing.md](./performance-testing.md) | Load/Stress Testing, k6, JMeter, Artillery |
+| ৮ | কন্ট্র্যাক্ট টেস্টিং | [contract-testing.md](./contract-testing.md) | Consumer-Driven Contracts, Pact Framework |
+| ৯ | মিউটেশন টেস্টিং | [mutation-testing.md](./mutation-testing.md) | Mutators, Kill Score, Infection, Stryker |
 
 ---
 

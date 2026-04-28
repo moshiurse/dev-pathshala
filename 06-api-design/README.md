@@ -16,6 +16,9 @@
 | ৫ | API ভার্সনিং | [versioning.md](./versioning.md) | URI/Header/Query Versioning, Deprecation Lifecycle, Backward Compatibility |
 | ৬ | এরর হ্যান্ডলিং | [error-handling.md](./error-handling.md) | RFC 7807, Error Codes System, Localization (বাংলা), Sentry, Graceful Degradation |
 | ৭ | API ডকুমেন্টেশন | [documentation.md](./documentation.md) | OpenAPI 3.0, Swagger/Scribe/Scramble, Postman, SDK Generation, Developer Portal |
+| ৮ | রেট লিমিটিং | [rate-limiting.md](./rate-limiting.md) | Token Bucket, Sliding Window, API Throttling |
+| ৯ | পেজিনেশন স্ট্র্যাটেজি | [pagination-strategies.md](./pagination-strategies.md) | Offset vs Cursor, Keyset Pagination |
+| ১০ | ওয়েবহুক | [webhook.md](./webhook.md) | Retry Strategies, Signature Verification, Idempotency |
 
 ---
 

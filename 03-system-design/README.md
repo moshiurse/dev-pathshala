@@ -18,6 +18,8 @@
 | ৫ | মেসেজ কিউ | [message-queue.md](./message-queue.md) | RabbitMQ, Kafka, SQS, Redis Streams, Laravel Queue, BullMQ |
 | ৬ | CAP থিওরেম | [cap-theorem.md](./cap-theorem.md) | CAP/PACELC, Quorum, Vector Clocks, CRDTs, ১৭+ DB Classification |
 | ৭ | রেট লিমিটিং | [rate-limiting.md](./rate-limiting.md) | ৫টি Algorithm, Redis Lua, Nginx, Tiered Plans, DDoS Mitigation |
+| ৮ | কনসিস্টেন্ট হ্যাশিং | [consistent-hashing.md](./consistent-hashing.md) | Hash Ring, Virtual Nodes, Distributed Systems |
+| ৯ | CDN | [cdn.md](./cdn.md) | Push vs Pull CDN, Cache Invalidation, Edge Computing |
 
 ### 📋 কেস স্টাডি (System Design Interviews)
 
@@ -26,6 +28,10 @@
 | ৮ | URL শর্টনার | [url-shortener.md](./url-shortener.md) | Base62, Bloom Filter, Analytics, Full Laravel + Express Code |
 | ৯ | চ্যাট সিস্টেম | [chat-system.md](./chat-system.md) | WebSocket, Cassandra, E2EE, Presence, Read Receipts, Media |
 | ১০ | নিউজফিড | [newsfeed.md](./newsfeed.md) | Fan-out Write/Read, Hybrid, Ranking Algorithm, Real-time |
+| ১১ | নোটিফিকেশন সিস্টেম | [notification-system.md](./notification-system.md) | WebSocket, SSE, Polling, FCM Push |
+| ১২ | সার্চ অটোকমপ্লিট | [search-autocomplete.md](./search-autocomplete.md) | Trie, Elasticsearch, Debounce |
+| ১৩ | ওয়েব ক্রলার | [web-crawler.md](./web-crawler.md) | BFS Crawling, URL Frontier, Deduplication |
+| ১৪ | ভিডিও স্ট্রিমিং | [video-streaming.md](./video-streaming.md) | Transcoding, HLS/DASH, Adaptive Bitrate |
 
 ---
 

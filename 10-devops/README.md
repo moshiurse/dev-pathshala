@@ -15,6 +15,10 @@
 | ৪ | ক্লাউড সার্ভিস | [cloud.md](./cloud.md) | AWS সার্ভিস, Lambda, S3, SQS, তিন প্রোভাইডার তুলনা |
 | ৫ | মনিটরিং ও লগিং | [monitoring.md](./monitoring.md) | Prometheus, Grafana, ELK, স্ট্রাকচার্ড লগিং |
 | ৬ | ইনফ্রাস্ট্রাকচার অ্যাজ কোড | [iac.md](./iac.md) | Terraform, Ansible, সম্পূর্ণ AWS সেটআপ |
+| ৭ | সার্ভিস মেশ | [service-mesh.md](./service-mesh.md) | Istio, Sidecar Proxy, Traffic Management |
+| ৮ | GitOps | [gitops.md](./gitops.md) | ArgoCD, Flux, Declarative Infrastructure |
+| ৯ | সিক্রেটস ম্যানেজমেন্ট | [secrets-management.md](./secrets-management.md) | Vault, AWS Secrets Manager, Env Vars |
+| ১০ | ডেপ্লয়মেন্ট স্ট্র্যাটেজি | [deployment-strategies.md](./deployment-strategies.md) | Blue/Green, Canary, Rolling, A/B |
 
 ---
 
