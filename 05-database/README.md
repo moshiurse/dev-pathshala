@@ -23,6 +23,9 @@
 | ১২ | টাইম-সিরিজ ডাটাবেস | [time-series-db.md](./time-series-db.md) | InfluxDB, TimescaleDB, Retention Policy, Downsampling |
 | ১৩ | গ্রাফ ডাটাবেস | [graph-database.md](./graph-database.md) | Neo4j, Cypher Query, Graph Traversal, Social Network |
 | ১৪ | ফুল-টেক্সট সার্চ | [full-text-search.md](./full-text-search.md) | Elasticsearch, Inverted Index, Analyzer, Relevance Scoring |
+| ১৫ | ORM | [orm.md](./orm.md) | Active Record vs Data Mapper, Eloquent, Doctrine, Prisma, TypeORM, N+1 Problem, Identity Map |
+| ১৬ | Elasticsearch | [elasticsearch.md](./elasticsearch.md) | Cluster/Shards, Mapping, BM25, Bangla Analyzer, kNN/Hybrid Search, ILM, Daraz Case Study |
+| ১৭ | Solr | [solr.md](./solr.md) | SolrCloud, ZooKeeper, edismax, JSON Facet API, Solr vs Elasticsearch, Migration Patterns |
 
 ---
 

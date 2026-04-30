@@ -17,6 +17,8 @@
 | ৭ | [অ্যাক্টর মডেল](./actor-model.md) | Actor Model, Message Passing, Erlang/Akka, Fault Tolerance |
 | ৮ | [থ্রেড পুল](./thread-pools.md) | Thread Pool Pattern, Worker Threads, Task Queue, Pool Sizing |
 | ৯ | [অ্যাসিঙ্ক/অ্যাওয়েট](./async-await.md) | Async/Await, Promises, Coroutines, Non-blocking Patterns |
+| ১০ | [সার্কিট ব্রেকার](./circuit-breaker.md) | Circuit Breaker (CLOSED/OPEN/HALF_OPEN), opossum, resilience4j, Retry/Bulkhead/Fallback |
+| ১১ | [ব্যাকপ্রেসার](./backpressure.md) | Producer-Consumer Imbalance, Node Streams, RxJS, Reactive Streams, Kafka Pause/Resume |
 
 ---
 

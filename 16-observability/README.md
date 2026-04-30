@@ -13,6 +13,7 @@
 | ২ | Distributed Tracing | [distributed-tracing.md](./distributed-tracing.md) | ডিস্ট্রিবিউটেড ট্রেসিং, Jaeger, Zipkin |
 | ৩ | Metrics & Alerting | [metrics-alerting.md](./metrics-alerting.md) | মেট্রিক্স, Prometheus, Grafana, অ্যালার্টিং |
 | ৪ | OpenTelemetry | [opentelemetry.md](./opentelemetry.md) | OTel SDK, Collector, ইন্সট্রুমেন্টেশন |
+| ৫ | ELK / EFK Stack | [elk-efk-stack.md](./elk-efk-stack.md) | Elasticsearch + Logstash/Fluentd/Fluent Bit + Kibana + Beats, ILM, K8s DaemonSet, BFIU compliance |
 
 ---
 

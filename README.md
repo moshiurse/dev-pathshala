@@ -29,6 +29,7 @@
 | ১৮ | [Apache Kafka ও ইভেন্ট স্ট্রিমিং](./18-kafka/README.md) | `18-kafka/` | Kafka আর্কিটেকচার, প্রোডিউসার, কনজিউমার, স্ট্রিমস |
 | ১৯ | [Frontend Engineering](./19-frontend-engineering/README.md) | `19-frontend-engineering/` | Senior frontend ইঞ্জিনিয়ারদের জন্য ব্রাউজার ইন্টার্নাল, স্টেট ম্যানেজমেন্ট, PWA, micro-frontends, accessibility ইত্যাদি |
 | ২০ | [Operating Systems & Kernel](./20-operating-systems/README.md) | `20-operating-systems/` | Linux kernel, processes/threads, memory, scheduling, namespaces/cgroups, eBPF, kernel networking stack |
+| ২১ | [AI Engineering](./21-ai-engineering/README.md) | `21-ai-engineering/` | LLM, Prompt Engineering, Embeddings, Vector DB, RAG, AI Agents, MCP Protocol, LLMOps, Fine-tuning |
 
 ---
 

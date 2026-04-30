@@ -21,6 +21,9 @@
 | ১০ | ডেপ্লয়মেন্ট স্ট্র্যাটেজি | [deployment-strategies.md](./deployment-strategies.md) | Blue/Green, Canary, Rolling, A/B |
 | ১১ | Nginx ডিপ ডাইভ | [nginx-deep-dive.md](./nginx-deep-dive.md) | Master/Worker, epoll, reverse proxy, TLS, caching, rate limit, প্রোডাকশন প্যাটার্ন |
 | ১২ | Apache ডিপ ডাইভ | [apache-deep-dive.md](./apache-deep-dive.md) | MPM (prefork/worker/event), .htaccess, mod_proxy, PHP-FPM, mod_ssl, vs Nginx |
+| ১৩ | SaaS / PaaS / IaaS | [saas-paas-iaas.md](./saas-paas-iaas.md) | Cloud service models, Shared Responsibility, Multi-tenancy, Decision Framework, BD startup cost |
+| ১৪ | সার্ভার ডেপ্লয়মেন্ট গাইড | [server-deployment-guide.md](./server-deployment-guide.md) | Linux hardening, SSH, ufw/fail2ban, systemd, blue-green, monitoring, backup, BDIX, prod checklist |
+| ১৫ | SSL / Certbot / ACME | [ssl-certbot.md](./ssl-certbot.md) | ACME (RFC 8555), Let's Encrypt, HTTP/DNS-01, wildcard, cert-manager, mTLS automation |
 
 ---
 

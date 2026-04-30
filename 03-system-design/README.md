@@ -36,6 +36,7 @@
 | ১৫ | পেমেন্ট সিস্টেম | [payment-system.md](./payment-system.md) | Payment Gateway, Idempotency, Double-Entry, PCI DSS, Reconciliation |
 | ১৬ | ডিস্ট্রিবিউটেড আইডি জেনারেশন | [distributed-id.md](./distributed-id.md) | UUID, Snowflake, ULID, Instagram-style ID, Comparison |
 | ১৭ | ফাইল স্টোরেজ সিস্টেম | [file-storage.md](./file-storage.md) | S3, Pre-signed URL, Multipart Upload, CDN, Image Pipeline |
+| ১৮ | লোড শেডিং | [load-shedding.md](./load-shedding.md) | Graceful Degradation, Priority-based Drop, Adaptive Concurrency, Retry-After, BD Surge Examples |
 
 ---
 
