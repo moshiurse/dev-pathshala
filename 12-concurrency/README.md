@@ -14,6 +14,9 @@
 | ৪ | [ডিস্ট্রিবিউটেড কনসেনসাস](./distributed-consensus.md) | Raft, Paxos, Leader Election |
 | ৫ | [কনকারেন্সি প্যাটার্নস](./concurrency-patterns.md) | Producer-Consumer, Reader-Writer, Thread Pool |
 | ৬ | [ইভেন্ট লুপ](./event-loop.md) | JavaScript Event Loop, PHP Async, Non-blocking I/O |
+| ৭ | [অ্যাক্টর মডেল](./actor-model.md) | Actor Model, Message Passing, Erlang/Akka, Fault Tolerance |
+| ৮ | [থ্রেড পুল](./thread-pools.md) | Thread Pool Pattern, Worker Threads, Task Queue, Pool Sizing |
+| ৯ | [অ্যাসিঙ্ক/অ্যাওয়েট](./async-await.md) | Async/Await, Promises, Coroutines, Non-blocking Patterns |
 
 ---
 

@@ -19,6 +19,7 @@
 | ৮ | রেট লিমিটিং | [rate-limiting.md](./rate-limiting.md) | Token Bucket, Sliding Window, API Throttling |
 | ৯ | পেজিনেশন স্ট্র্যাটেজি | [pagination-strategies.md](./pagination-strategies.md) | Offset vs Cursor, Keyset Pagination |
 | ১০ | ওয়েবহুক | [webhook.md](./webhook.md) | Retry Strategies, Signature Verification, Idempotency |
+| ১১ | API কনসাম্পশন প্যাটার্ন | [api-consumption-patterns.md](./api-consumption-patterns.md) | React Query, SWR, Caching, Retry, Polling, WebSocket, Guzzle |
 
 ---
 

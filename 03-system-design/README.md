@@ -20,6 +20,7 @@
 | ৭ | রেট লিমিটিং | [rate-limiting.md](./rate-limiting.md) | ৫টি Algorithm, Redis Lua, Nginx, Tiered Plans, DDoS Mitigation |
 | ৮ | কনসিস্টেন্ট হ্যাশিং | [consistent-hashing.md](./consistent-hashing.md) | Hash Ring, Virtual Nodes, Distributed Systems |
 | ৯ | CDN | [cdn.md](./cdn.md) | Push vs Pull CDN, Cache Invalidation, Edge Computing |
+| ১০ | ফল্ট টলারেন্স ও রেজিলিয়েন্স | [fault-tolerance.md](./fault-tolerance.md) | Circuit Breaker, Retry, Timeout, Bulkhead, Fallback, Chaos Engineering |
 
 ### 📋 কেস স্টাডি (System Design Interviews)
 
@@ -32,6 +33,9 @@
 | ১২ | সার্চ অটোকমপ্লিট | [search-autocomplete.md](./search-autocomplete.md) | Trie, Elasticsearch, Debounce |
 | ১৩ | ওয়েব ক্রলার | [web-crawler.md](./web-crawler.md) | BFS Crawling, URL Frontier, Deduplication |
 | ১৪ | ভিডিও স্ট্রিমিং | [video-streaming.md](./video-streaming.md) | Transcoding, HLS/DASH, Adaptive Bitrate |
+| ১৫ | পেমেন্ট সিস্টেম | [payment-system.md](./payment-system.md) | Payment Gateway, Idempotency, Double-Entry, PCI DSS, Reconciliation |
+| ১৬ | ডিস্ট্রিবিউটেড আইডি জেনারেশন | [distributed-id.md](./distributed-id.md) | UUID, Snowflake, ULID, Instagram-style ID, Comparison |
+| ১৭ | ফাইল স্টোরেজ সিস্টেম | [file-storage.md](./file-storage.md) | S3, Pre-signed URL, Multipart Upload, CDN, Image Pipeline |
 
 ---
 

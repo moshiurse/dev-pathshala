@@ -17,6 +17,10 @@
 | ৬ | হেক্সাগোনাল | [hexagonal.md](./hexagonal.md) | Ports & Adapters, DDD, Swappable Adapters, Clean/Onion তুলনা |
 | ৭ | সার্ভারলেস | [serverless.md](./serverless.md) | Lambda (Bref+Node), Step Functions, WebSocket, Cost Analysis, Cold Start |
 | ৮ | রিপোজিটরি প্যাটার্ন | [repository-pattern.md](./repository-pattern.md) | Specification, Caching Decorator, Unit of Work, Multi-Database, Criteria Builder |
+| ৯ | ক্লিন আর্কিটেকচার | [clean-architecture.md](./clean-architecture.md) | Uncle Bob's Clean Architecture, Dependency Rule, Use Cases, Entity Layer |
+| ১০ | লেয়ার্ড আর্কিটেকচার | [layered-architecture.md](./layered-architecture.md) | Presentation, Business, Persistence Layer, Strict vs Relaxed Layering |
+| ১১ | পাইপ অ্যান্ড ফিল্টার | [pipe-and-filter.md](./pipe-and-filter.md) | Pipeline Pattern, Data Transformation, Middleware Chain, ETL |
+| ১২ | রেন্ডারিং প্যাটার্ন | [rendering-patterns.md](./rendering-patterns.md) | SSR, CSR, SSG, ISR, Hydration, Island Architecture, Inertia.js |
 
 ---
 

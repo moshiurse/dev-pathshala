@@ -20,6 +20,9 @@
 | ৯ | শার্ডিং | [sharding.md](./sharding.md) | Horizontal vs Vertical, Shard Key, Consistent Hashing |
 | ১০ | কানেকশন পুলিং | [connection-pooling.md](./connection-pooling.md) | Pool Configuration, PDO Persistent, pg-pool |
 | ১১ | কোয়েরি এক্সিকিউশন প্ল্যান | [query-execution-plan.md](./query-execution-plan.md) | EXPLAIN/ANALYZE, Index Usage, Optimization |
+| ১২ | টাইম-সিরিজ ডাটাবেস | [time-series-db.md](./time-series-db.md) | InfluxDB, TimescaleDB, Retention Policy, Downsampling |
+| ১৩ | গ্রাফ ডাটাবেস | [graph-database.md](./graph-database.md) | Neo4j, Cypher Query, Graph Traversal, Social Network |
+| ১৪ | ফুল-টেক্সট সার্চ | [full-text-search.md](./full-text-search.md) | Elasticsearch, Inverted Index, Analyzer, Relevance Scoring |
 
 ---
 

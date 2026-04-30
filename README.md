@@ -21,6 +21,12 @@
 | ১০ | [DevOps ও CI/CD](./10-devops/README.md) | `10-devops/` | ডেপ্লয়মেন্ট, কন্টেইনার, পাইপলাইন |
 | ১১ | [সিকিউরিটি](./11-security/README.md) | `11-security/` | OWASP, XSS/CSRF, এনক্রিপশন, OAuth/JWT |
 | ১২ | [কনকারেন্সি ও ডিস্ট্রিবিউটেড সিস্টেম](./12-concurrency/README.md) | `12-concurrency/` | Race Conditions, Saga, Consensus, Event Loop |
+| ১৩ | [ডোমেইন-ড্রিভেন ডিজাইন (DDD)](./13-ddd/README.md) | `13-ddd/` | Strategic ও Tactical DDD, Bounded Context, Aggregates |
+| ১৪ | [নেটওয়ার্কিং ফান্ডামেন্টালস](./14-networking/README.md) | `14-networking/` | OSI Model, TCP/UDP, HTTP/2-3, WebSocket, DNS, TLS |
+| ১৫ | [সফটওয়্যার ইঞ্জিনিয়ারিং লিডারশিপ](./15-leadership/README.md) | `15-leadership/` | কোড রিভিউ, টেকনিক্যাল রাইটিং, মেন্টরিং, ADR |
+| ১৬ | [অবজার্ভেবিলিটি](./16-observability/README.md) | `16-observability/` | লগিং, ডিস্ট্রিবিউটেড ট্রেসিং, মেট্রিক্স, OpenTelemetry |
+| ১৭ | [পারফরম্যান্স ইঞ্জিনিয়ারিং](./17-performance/README.md) | `17-performance/` | প্রোফাইলিং, মেমোরি ম্যানেজমেন্ট, বেঞ্চমার্কিং |
+| ১৮ | [Apache Kafka ও ইভেন্ট স্ট্রিমিং](./18-kafka/README.md) | `18-kafka/` | Kafka আর্কিটেকচার, প্রোডিউসার, কনজিউমার, স্ট্রিমস |
 
 ---
 
