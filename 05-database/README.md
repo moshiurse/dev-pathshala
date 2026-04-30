@@ -26,6 +26,7 @@
 | ১৫ | ORM | [orm.md](./orm.md) | Active Record vs Data Mapper, Eloquent, Doctrine, Prisma, TypeORM, N+1 Problem, Identity Map |
 | ১৬ | Elasticsearch | [elasticsearch.md](./elasticsearch.md) | Cluster/Shards, Mapping, BM25, Bangla Analyzer, kNN/Hybrid Search, ILM, Daraz Case Study |
 | ১৭ | Solr | [solr.md](./solr.md) | SolrCloud, ZooKeeper, edismax, JSON Facet API, Solr vs Elasticsearch, Migration Patterns |
+| ১৮ | Redis ডিপ ডাইভ | [redis-deep-dive.md](./redis-deep-dive.md) | Data Structures, Pub/Sub, Streams, Lua, Sentinel, Cluster, Cache Patterns, Distributed Lock |
 
 ---
 

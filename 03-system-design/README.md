@@ -37,6 +37,7 @@
 | ১৬ | ডিস্ট্রিবিউটেড আইডি জেনারেশন | [distributed-id.md](./distributed-id.md) | UUID, Snowflake, ULID, Instagram-style ID, Comparison |
 | ১৭ | ফাইল স্টোরেজ সিস্টেম | [file-storage.md](./file-storage.md) | S3, Pre-signed URL, Multipart Upload, CDN, Image Pipeline |
 | ১৮ | লোড শেডিং | [load-shedding.md](./load-shedding.md) | Graceful Degradation, Priority-based Drop, Adaptive Concurrency, Retry-After, BD Surge Examples |
+| ১৯ | RabbitMQ / AMQP | [rabbitmq-amqp.md](./rabbitmq-amqp.md) | AMQP 0-9-1, Exchanges (direct/topic/fanout), Quorum/Stream Queues, DLX, Federation, vs Kafka |
 
 ---
 

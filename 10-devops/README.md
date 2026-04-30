@@ -24,6 +24,7 @@
 | ১৩ | SaaS / PaaS / IaaS | [saas-paas-iaas.md](./saas-paas-iaas.md) | Cloud service models, Shared Responsibility, Multi-tenancy, Decision Framework, BD startup cost |
 | ১৪ | সার্ভার ডেপ্লয়মেন্ট গাইড | [server-deployment-guide.md](./server-deployment-guide.md) | Linux hardening, SSH, ufw/fail2ban, systemd, blue-green, monitoring, backup, BDIX, prod checklist |
 | ১৫ | SSL / Certbot / ACME | [ssl-certbot.md](./ssl-certbot.md) | ACME (RFC 8555), Let's Encrypt, HTTP/DNS-01, wildcard, cert-manager, mTLS automation |
+| ১৬ | Git Advanced | [git-advanced.md](./git-advanced.md) | Internals, rebase/cherry-pick/bisect/reflog/worktree, Monorepo (Nx/Turbo/Bazel), Hooks, Recovery |
 
 ---
 

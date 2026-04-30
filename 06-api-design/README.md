@@ -25,6 +25,7 @@
 | ১৪ | GraphQL Federation | [graphql-federation.md](./graphql-federation.md) | Apollo Federation v2, Subgraphs, @key/@requires/@provides, Supergraph composition |
 | ১৫ | API Gateway | [api-gateway.md](./api-gateway.md) | Kong/Envoy/AWS APIGW, Routing, JWT, Rate Limit, Aggregation, Circuit Breaker, mTLS, Daraz/Pathao/bKash |
 | ১৬ | Polling Patterns | [polling-patterns.md](./polling-patterns.md) | Short vs Long Polling vs SSE vs WebSocket vs gRPC streaming, Decision Tree, BD 3G/4G Reality |
+| ১৭ | GraphQL Subscriptions | [graphql-subscriptions.md](./graphql-subscriptions.md) | graphql-ws, PubSub backends (Redis/Kafka/RabbitMQ), Apollo/Yoga/Lighthouse, Scaling, Auth |
 
 ---
 
