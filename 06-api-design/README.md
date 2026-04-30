@@ -23,6 +23,7 @@
 | ১২ | Backend-for-Frontend (BFF) | [bff-pattern.md](./bff-pattern.md) | Per-client API, Aggregation, Transformation, Auth offload, Daraz Web vs Mobile BFF |
 | ১৩ | Server-Sent Events (SSE) | [server-sent-events.md](./server-sent-events.md) | text/event-stream, EventSource, Last-Event-ID, Nginx buffering, Pathao Foods order tracking |
 | ১৪ | GraphQL Federation | [graphql-federation.md](./graphql-federation.md) | Apollo Federation v2, Subgraphs, @key/@requires/@provides, Supergraph composition |
+| ১৫ | API Gateway | [api-gateway.md](./api-gateway.md) | Kong/Envoy/AWS APIGW, Routing, JWT, Rate Limit, Aggregation, Circuit Breaker, mTLS, Daraz/Pathao/bKash |
 
 ---
 

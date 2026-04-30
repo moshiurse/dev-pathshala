@@ -19,6 +19,8 @@
 | ৮ | GitOps | [gitops.md](./gitops.md) | ArgoCD, Flux, Declarative Infrastructure |
 | ৯ | সিক্রেটস ম্যানেজমেন্ট | [secrets-management.md](./secrets-management.md) | Vault, AWS Secrets Manager, Env Vars |
 | ১০ | ডেপ্লয়মেন্ট স্ট্র্যাটেজি | [deployment-strategies.md](./deployment-strategies.md) | Blue/Green, Canary, Rolling, A/B |
+| ১১ | Nginx ডিপ ডাইভ | [nginx-deep-dive.md](./nginx-deep-dive.md) | Master/Worker, epoll, reverse proxy, TLS, caching, rate limit, প্রোডাকশন প্যাটার্ন |
+| ১২ | Apache ডিপ ডাইভ | [apache-deep-dive.md](./apache-deep-dive.md) | MPM (prefork/worker/event), .htaccess, mod_proxy, PHP-FPM, mod_ssl, vs Nginx |
 
 ---
 
