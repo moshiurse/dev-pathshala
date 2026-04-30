@@ -20,6 +20,9 @@
 | ৯ | পেজিনেশন স্ট্র্যাটেজি | [pagination-strategies.md](./pagination-strategies.md) | Offset vs Cursor, Keyset Pagination |
 | ১০ | ওয়েবহুক | [webhook.md](./webhook.md) | Retry Strategies, Signature Verification, Idempotency |
 | ১১ | API কনসাম্পশন প্যাটার্ন | [api-consumption-patterns.md](./api-consumption-patterns.md) | React Query, SWR, Caching, Retry, Polling, WebSocket, Guzzle |
+| ১২ | Backend-for-Frontend (BFF) | [bff-pattern.md](./bff-pattern.md) | Per-client API, Aggregation, Transformation, Auth offload, Daraz Web vs Mobile BFF |
+| ১৩ | Server-Sent Events (SSE) | [server-sent-events.md](./server-sent-events.md) | text/event-stream, EventSource, Last-Event-ID, Nginx buffering, Pathao Foods order tracking |
+| ১৪ | GraphQL Federation | [graphql-federation.md](./graphql-federation.md) | Apollo Federation v2, Subgraphs, @key/@requires/@provides, Supergraph composition |
 
 ---
 

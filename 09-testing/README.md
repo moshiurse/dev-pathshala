@@ -18,6 +18,7 @@
 | ৭ | পারফরম্যান্স টেস্টিং | [performance-testing.md](./performance-testing.md) | Load/Stress Testing, k6, JMeter, Artillery |
 | ৮ | কন্ট্র্যাক্ট টেস্টিং | [contract-testing.md](./contract-testing.md) | Consumer-Driven Contracts, Pact Framework |
 | ৯ | মিউটেশন টেস্টিং | [mutation-testing.md](./mutation-testing.md) | Mutators, Kill Score, Infection, Stryker |
+| ১০ | ভিজ্যুয়াল রিগ্রেশন টেস্টিং | [visual-regression.md](./visual-regression.md) | Percy, Chromatic, BackstopJS, Playwright snapshot, Storybook + Loki, flakiness handling |
 
 ---
 

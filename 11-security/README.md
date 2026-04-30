@@ -17,6 +17,8 @@
 | ৫ | [OAuth ও JWT](./oauth-jwt.md) | OAuth 2.0 ফ্লো, JWT স্ট্রাকচার ও টোকেন-ভিত্তিক অথেনটিকেশন |
 | ৬ | [ইনপুট ভ্যালিডেশন](./input-validation.md) | সার্ভার-সাইড ও ক্লায়েন্ট-সাইড ইনপুট ভ্যালিডেশন ও স্যানিটাইজেশন |
 | ৭ | [সিকিউরিটি হেডারস](./security-headers.md) | HTTP সিকিউরিটি হেডারস (CSP, HSTS, X-Frame-Options ইত্যাদি) |
+| ৮ | [CORS ও CSP](./cors-csp.md) | Same-Origin Policy, Preflight, CSP nonce/strict-dynamic/Trusted Types, misconfigurations |
+| ৯ | [Supply Chain Security](./supply-chain-security.md) | Dependency confusion, Typosquat, SBOM (CycloneDX), Sigstore/cosign, SLSA, npm/Composer audit |
 
 ---
 
