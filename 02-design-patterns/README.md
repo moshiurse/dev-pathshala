@@ -1,12 +1,24 @@
-# 📘 ডিজাইন প্যাটার্ন (Gang of Four)
+# 📘 ডিজাইন প্যাটার্ন (GoF + JavaScript + React)
 
-> GoF এর ২৩টি ডিজাইন প্যাটার্ন — তিনটি ক্যাটাগরিতে বিভক্ত।
+> **GoF ২৩টি** প্যাটার্ন + **JavaScript-specific** প্যাটার্ন + **React** প্যাটার্ন
 > প্রতিটি প্যাটার্নে PHP 8.3 ও JavaScript ES2022+ উদাহরণ, real-world applicable areas, 
 > deep dive analysis, অন্যান্য প্যাটার্নের সাথে সম্পর্ক, এবং বাংলাদেশ context অন্তর্ভুক্ত।
 
 ---
 
-## 📂 ক্যাটাগরি সূচি
+## 🎯 দ্রুত নেভিগেশন
+
+| ক্যাটাগরি | লিংক | বর্ণনা |
+|----------|------|--------|
+| **জাভাস্ক্রিপ্ট** | [`javascript/`](./javascript/) | Module Pattern, Mixin Pattern |
+| **রিঅ্যাক্ট** | [`react/`](./react/) | Provider Pattern + Component Design Patterns |
+| **ক্রিয়েশনাল** | [`creational/`](./creational/) | ৫টি প্যাটার্ন — Singleton, Factory, Builder, Prototype, Abstract Factory |
+| **স্ট্রাকচারাল** | [`structural/`](./structural/) | ৭টি প্যাটার্ন — Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy |
+| **বিহেভিয়রাল** | [`behavioral/`](./behavioral/) | ১১টি প্যাটার্ন — Observer, Strategy, State, Command, Iterator, Mediator, Template Method, Chain of Responsibility, Visitor, Interpreter, Memento |
+
+---
+
+## 📂 বিস্তারিত ক্যাটাগরি সূচি
 
 ### 🏗️ ক্রিয়েশনাল প্যাটার্ন (Creational) — [`creational/`](./creational/)
 
@@ -114,4 +126,27 @@
 
 ---
 
-> **মোট:** ৫ ক্রিয়েশনাল + ৭ স্ট্রাকচারাল + ১১ বিহেভিয়রাল = **২৩টি প্যাটার্ন** ✅ সম্পূর্ণ
+> **মোট:** ৫ ক্রিয়েশনাল + ৭ স্ট্রাকচারাল + ১১ বিহেভিয়রাল = **২৩টি GoF প্যাটার্ন** ✅ সম্পূর্ণ
+
+---
+
+## 🟨 জাভাস্ক্রিপ্ট প্যাটার্ন — [`javascript/`](./javascript/)
+
+> GoF-এর বাইরে JavaScript-specific ডিজাইন প্যাটার্ন (patterns.dev)
+
+| # | প্যাটার্ন | ফাইল | মূল বিষয়বস্তু |
+|---|----------|------|--------------|
+| ১ | Module Pattern | [module-pattern.md](./javascript/module-pattern.md) | ES Modules, এনক্যাপসুলেশন, Named/Default Export, IIFE, Dynamic Import |
+| ২ | Mixin Pattern | [mixin-pattern.md](./javascript/mixin-pattern.md) | Composition over Inheritance, Object.assign, Functional Mixin, Custom Hooks |
+
+---
+
+## ⚛️ রিঅ্যাক্ট প্যাটার্ন — [`react/`](./react/)
+
+> React-specific কম্পোনেন্ট ডিজাইন প্যাটার্ন (patterns.dev)
+>
+> **দ্রষ্টব্য:** Compound Component, Render Props, HOC, Hooks → [`19-frontend-engineering/component-design.md`](../../19-frontend-engineering/component-design.md)
+
+| # | প্যাটার্ন | ফাইল | মূল বিষয়বস্তু |
+|---|----------|------|--------------|
+| ১ | Provider Pattern | [provider-pattern.md](./react/provider-pattern.md) | React Context API, Prop Drilling সমাধান, Auth/Theme/Cart Provider, useMemo অপ্টিমাইজেশন |

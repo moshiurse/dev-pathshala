@@ -200,6 +200,45 @@ size-pack: 45 MiB
 ```
 
 ```bash
+### `git gc --aggressive` এবং Object Packing — বিস্তারিত আলোচনা
+
+<!-- 
+এই বিভাগটি Git এর aggressive garbage collection কমান্ড সম্পর্কে আলোচনা করে।
+এটি ব্যাখ্যা করে যে `git gc --aggressive` চালানোর সময় কী ঘটে এবং এর প্রভাবগুলি কী।
+
+#### `git gc --aggressive` এবং Object Packing — বিস্তারিত আলোচনা
+
+`git gc` (garbage collection) হলো Git-এর housekeeping command যা loose object গুলোকে packed format-এ compress করে repo optimize করে। `--aggressive` flag এটিকে আরও intensive করে তোলে।
+
+```bash
+git gc --aggressive    # বড় repo-তে ১৫-৩০ মিনিট পর্যন্ত সময় লাগতে পারে
+git repack -ad         # পুরোনো pack delete করে পুনরায় pack তৈরি
+```
+
+**কী ঘটে?**
+
+1. **Loose objects কে pack করে**: `.git/objects/ab/cdef...` এর পরিবর্তে compressed `.git/objects/pack/` file
+2. **Delta compression**: একই ধরনের blob/tree-এর মধ্যে diff store করে (storage ৪০-৭০% কমাতে পারে)
+3. **Reachability bitmap তৈরি করে**: পরবর্তী push/fetch দ্রুত করার জন্য
+
+**পারফরম্যান্স লাভ**:
+- Clone/fetch দ্রুত (জিপড ডেটা transmit)
+- `git log` দ্রুত (commit-graph সহ)
+- Disk space ৫০-৭০% সাশ্রয়
+
+**সতর্কতা**:
+- ⚠️ Production repo-এ সরাসরি `--aggressive` চালাবেন না — pack operation CPU-intensive
+- নিশাচর সময়ে schedule করুন (GitHub Actions cron, GitLab scheduled pipeline)
+- সময়কালীন: সপ্তাহে ১ বার যথেষ্ট (daily না)
+
+**Configuration**:
+```ini
+[gc]
+  aggressive = false
+  auto = 6700
+  autoPackLimit = 50
+```
+
 $ git gc --aggressive    # বড় repo-তে অনেক সময় লাগে; production-এ সাবধানে
 $ git repack -ad         # repack করো, পুরোনো pack delete
 ```
