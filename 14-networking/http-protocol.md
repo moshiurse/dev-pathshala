@@ -927,3 +927,211 @@ HTTP/3 ব্যবহার করুন:
 ---
 
 > 💡 **পরবর্তী**: [WebSockets](./websockets.md) — রিয়েল-টাইম কমিউনিকেশন
+
+---
+
+## 🔐 HTTP vs HTTPS — বিস্তারিত তুলনা
+
+### HTTP vs HTTPS পার্থক্য
+
+HTTP (HyperText Transfer Protocol) ডেটা **প্লেইন টেক্সট** আকারে পাঠায়। অর্থাৎ আপনি যখন bKash-এ পাসওয়ার্ড দিচ্ছেন, কেউ মাঝখানে বসে সেটা পড়তে পারবে। HTTPS হলো HTTP-র **সুরক্ষিত সংস্করণ** — এখানে TLS (Transport Layer Security) ব্যবহার করে সমস্ত ডেটা **এনক্রিপ্ট** করা হয়।
+
+```
+  HTTP (অনিরাপদ):
+  ┌──────────┐    "পাসওয়ার্ড: 1234"    ┌──────────┐
+  │  ব্রাউজার │ ──────────────────────► │  সার্ভার  │
+  └──────────┘   🔓 প্লেইন টেক্সট       └──────────┘
+        ↑
+    😈 হ্যাকার পড়তে পারবে!
+
+  HTTPS (নিরাপদ):
+  ┌──────────┐   "x7#kQ!m9@zL..."     ┌──────────┐
+  │  ব্রাউজার │ ──────────────────────► │  সার্ভার  │
+  └──────────┘   🔒 এনক্রিপ্টেড         └──────────┘
+        ↑
+    😈 হ্যাকার পড়তে পারবে না!
+```
+
+---
+
+### 📊 তুলনা টেবিল
+
+| বিষয়            | HTTP                        | HTTPS                          |
+|------------------|-----------------------------|--------------------------------|
+| পোর্ট            | 80                          | 443                            |
+| এনক্রিপশন        | নেই ❌                      | TLS/SSL ✅                     |
+| সার্টিফিকেট      | প্রয়োজন নেই                 | SSL সার্টিফিকেট আবশ্যক         |
+| URL              | `http://`                   | `https://`                     |
+| ডেটা নিরাপত্তা   | প্লেইন টেক্সট               | এনক্রিপ্টেড                    |
+| SEO র‍্যাংকিং    | কম 📉                       | বেশি 📈 (Google প্রাধান্য দেয়) |
+| পারফরম্যান্স     | সামান্য দ্রুত               | TLS হ্যান্ডশেক ওভারহেড আছে     |
+| ব্রাউজার ওয়ার্নিং | "Not Secure" দেখায় ⚠️      | 🔒 প্যাডলক আইকন দেখায়         |
+| HTTP/2 সাপোর্ট   | ব্রাউজারে সাপোর্ট নেই       | HTTP/2 শুধু HTTPS-এ কাজ করে    |
+
+---
+
+### 🤝 HTTPS কীভাবে কাজ করে — TLS Handshake
+
+TLS হ্যান্ডশেক হলো ব্রাউজার ও সার্ভারের মধ্যে নিরাপদ সংযোগ স্থাপনের প্রক্রিয়া:
+
+```
+  ব্রাউজার (Client)                          সার্ভার (bKash)
+  ┌──────────────┐                          ┌──────────────┐
+  │              │ ── 1. ClientHello ──────► │              │
+  │              │    (TLS version,          │              │
+  │              │     cipher suites)        │              │
+  │              │                           │              │
+  │              │ ◄── 2. ServerHello ────── │              │
+  │              │    (সার্টিফিকেট,           │              │
+  │              │     নির্বাচিত cipher)      │              │
+  │              │                           │              │
+  │  3. সার্টিফিকেট যাচাই (CA চেক)          │              │
+  │              │                           │              │
+  │              │ ── 4. Key Exchange ─────► │              │
+  │              │    (Pre-master secret)    │              │
+  │              │                           │              │
+  │              │ ◄── 5. Finished ────────  │              │
+  │              │                           │              │
+  │  ════════ 🔒 এনক্রিপ্টেড সংযোগ স্থাপিত ════════  │
+  │              │                           │              │
+  │              │ ══ 6. ডেটা আদান-প্রদান ══ │              │
+  └──────────────┘                          └──────────────┘
+```
+
+---
+
+### ⚡ কেন HTTPS বাধ্যতামূলক
+
+**১. ডেটা সুরক্ষা:**
+Man-in-the-Middle (MITM) আক্রমণ থেকে রক্ষা করে। পাবলিক WiFi-তে (যেমন ঢাকার কফি শপ) কেউ আপনার ডেটা চুরি করতে পারবে না।
+
+**২. SEO র‍্যাংকিং:**
+Google ২০১৪ সাল থেকে HTTPS কে র‍্যাংকিং সিগন্যাল হিসেবে ব্যবহার করছে। HTTPS ছাড়া আপনার সাইট সার্চে পিছিয়ে যাবে।
+
+**৩. ব্রাউজার ওয়ার্নিং:**
+Chrome, Firefox সবগুলো ব্রাউজার HTTP সাইটে "Not Secure" দেখায়। ব্যবহারকারীরা ভয় পেয়ে চলে যায়।
+
+**৪. আধুনিক ফিচার:**
+Service Workers, Geolocation API, Camera/Microphone অ্যাক্সেস — এসব শুধু HTTPS-এ কাজ করে।
+
+---
+
+### 🇧🇩 বাংলাদেশী উদাহরণ
+
+**bKash / Nagad:**
+আর্থিক লেনদেনের জন্য HTTPS বাধ্যতামূলক। বাংলাদেশ ব্যাংকের নির্দেশনা অনুযায়ী সকল পেমেন্ট গেটওয়ে TLS 1.2+ ব্যবহার করতে হবে।
+
+**সরকারি ওয়েবসাইট:**
+- `https://bangladesh.gov.bd` — জাতীয় পোর্টাল
+- `https://nid.gov.bd` — NID সার্ভিস
+- `https://btrc.gov.bd` — BTRC (টেলিকম রেগুলেটর)
+
+**BTRC কমপ্লায়েন্স:**
+ISP এবং টেলিকম অপারেটরদের জন্য BTRC নির্দেশিত সিকিউরিটি স্ট্যান্ডার্ড মেনে চলা আবশ্যক — যেখানে HTTPS ব্যবহার অন্তর্ভুক্ত।
+
+---
+
+### 🔄 HTTP থেকে HTTPS মাইগ্রেশন
+
+**ধাপ ১: SSL সার্টিফিকেট ইনস্টল করুন** (Let's Encrypt ফ্রি দেয়)
+
+**ধাপ ২: HTTP থেকে HTTPS-এ রিডাইরেক্ট করুন**
+
+```php
+// PHP — .htaccess বা index.php তে
+if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+    $redirectUrl = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('Location: ' . $redirectUrl, true, 301);
+    exit;
+}
+```
+
+```javascript
+// Node.js (Express) — HTTP থেকে HTTPS রিডাইরেক্ট
+const express = require('express');
+const app = express();
+
+app.use((req, res, next) => {
+    if (!req.secure) {
+        return res.redirect(301, `https://${req.headers.host}${req.url}`);
+    }
+    next();
+});
+```
+
+**ধাপ ৩: HSTS হেডার যোগ করুন**
+
+```php
+// PHP — ব্রাউজারকে বলে "সবসময় HTTPS ব্যবহার করো"
+header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
+```
+
+```javascript
+// Node.js (Express) — HSTS হেডার
+app.use((req, res, next) => {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+    next();
+});
+```
+
+---
+
+### ⚠️ Mixed Content সমস্যা
+
+HTTPS পেজে যখন HTTP রিসোর্স (ছবি, CSS, JS) লোড করা হয়, তখন **Mixed Content** সমস্যা হয়। ব্রাউজার সেগুলো ব্লক করে দিতে পারে।
+
+```
+  HTTPS পেজ (https://mysite.com)
+  ┌───────────────────────────────────────┐
+  │                                       │
+  │  ✅ <img src="https://cdn/logo.png">  │  ← নিরাপদ
+  │  ❌ <img src="http://cdn/banner.jpg"> │  ← ব্লক হবে!
+  │  ❌ <script src="http://old/app.js">  │  ← ব্লক হবে!
+  │                                       │
+  └───────────────────────────────────────┘
+```
+
+**সমাধান:** সকল রিসোর্সের URL `https://` বা প্রোটোকল-রিলেটিভ (`//`) ব্যবহার করুন।
+
+```php
+// PHP — Mixed Content চেক করুন
+// ❌ ভুল
+echo '<img src="http://example.com/image.jpg">';
+
+// ✅ সঠিক
+echo '<img src="https://example.com/image.jpg">';
+
+// ✅ প্রোটোকল-রিলেটিভ
+echo '<img src="//example.com/image.jpg">';
+```
+
+---
+
+### 🚀 পারফরম্যান্স ইম্প্যাক্ট
+
+**TLS ওভারহেড:**
+প্রথম সংযোগে TLS হ্যান্ডশেকের জন্য অতিরিক্ত ১-২ রাউন্ড ট্রিপ লাগে। তবে TLS Session Resumption ব্যবহারে পরবর্তী সংযোগ দ্রুত হয়।
+
+**HTTP/2 এর জন্য HTTPS আবশ্যক:**
+সকল প্রধান ব্রাউজার HTTP/2 শুধুমাত্র HTTPS-এ সাপোর্ট করে। HTTP/2 এর multiplexing ও header compression পারফরম্যান্স এত বাড়ায় যে TLS ওভারহেড নগণ্য হয়ে যায়।
+
+**TLS 1.3 এর 0-RTT:**
+
+```
+  TLS 1.2 (পুরানো):
+  Client ──► Server: ClientHello
+  Client ◄── Server: ServerHello + Certificate
+  Client ──► Server: Key Exchange
+  Client ◄── Server: Finished
+  Client ──► Server: ডেটা পাঠানো শুরু     ← ২ রাউন্ড ট্রিপ
+
+  TLS 1.3 (নতুন):
+  Client ──► Server: ClientHello + Key Share
+  Client ◄── Server: ServerHello + Finished
+  Client ──► Server: ডেটা পাঠানো শুরু     ← ১ রাউন্ড ট্রিপ
+
+  TLS 1.3 — 0-RTT (পুনরায় সংযোগ):
+  Client ──► Server: ClientHello + ডেটা    ← ০ রাউন্ড ট্রিপ! 🚀
+```
+
+> 💡 **উপসংহার:** HTTPS আজকের ওয়েবে ঐচ্ছিক নয়, বাধ্যতামূলক। পারফরম্যান্স, সিকিউরিটি, SEO — সব দিক থেকে HTTPS ব্যবহার করাই শ্রেয়।

@@ -2068,3 +2068,344 @@ describe('TransferService', () => {
 ---
 
 > **💡 মনে রাখবেন:** Transaction হলো data integrity-র ভিত্তি। সঠিক isolation level, locking strategy, এবং error handling ছাড়া production-এ data corruption অনিবার্য। বাংলাদেশের fintech ecosystem (bKash, Nagad, bank integration) এ transaction management-এ কোনো আপোষ চলে না — কারণ এখানে প্রতিটি ভুলের মূল্য সরাসরি মানুষের টাকা।
+
+---
+
+## 🆚 ACID vs BASE — গভীর তুলনা
+
+### BASE কী?
+
+BASE হলো distributed system-এ ব্যবহৃত একটি consistency model যেটি ACID-এর বিপরীত দিকে অবস্থান করে। BASE-এর পূর্ণরূপ:
+
+- **Basically Available:** সিস্টেম সবসময় response দেবে, এমনকি কিছু node fail করলেও। আপনি Facebook-এ ঢুকলে page সবসময় load হবে — হয়তো কিছু data একটু পুরনো থাকবে, কিন্তু system কখনো "unavailable" বলবে না।
+
+- **Soft State:** সিস্টেমের state সময়ের সাথে পরিবর্তন হতে পারে, এমনকি কোনো নতুন input ছাড়াই। কারণ background-এ data synchronize হতে থাকে। ধরুন আপনি একটি post-এ like দিলেন — কিছু সময়ের জন্য different server-এ like count ভিন্ন দেখাতে পারে।
+
+- **Eventually Consistent:** কিছু সময় পর সব node-এ data একই হয়ে যাবে। ১০০% real-time consistency guarantee দেয় না, তবে "শেষ পর্যন্ত" সব ঠিক হয়ে যায়। YouTube-এ video-র view count সব জায়গায় সাথে সাথে update হয় না — কিন্তু কিছুক্ষণ পর সব জায়গায় একই সংখ্যা দেখায়।
+
+```
+BASE-এর মূলনীতি:
+
+    ┌─────────────────────────────────────────────────┐
+    │              BASE Properties                     │
+    │                                                  │
+    │  ┌──────────────────┐                            │
+    │  │ Basically Available│ → সবসময় response দেবে   │
+    │  └──────────────────┘                            │
+    │  ┌──────────────────┐                            │
+    │  │   Soft State      │ → state পরিবর্তনশীল      │
+    │  └──────────────────┘                            │
+    │  ┌──────────────────────────┐                    │
+    │  │ Eventually Consistent    │ → শেষে consistent  │
+    │  └──────────────────────────┘                    │
+    └─────────────────────────────────────────────────┘
+```
+
+---
+
+### ACID vs BASE তুলনা টেবিল
+
+| বিষয় | ACID | BASE |
+|---|---|---|
+| **পূর্ণরূপ** | Atomicity, Consistency, Isolation, Durability | Basically Available, Soft State, Eventually Consistent |
+| **Consistency** | Strong — সাথে সাথে সব জায়গায় একই data | Eventual — কিছু সময় পর consistent হয় |
+| **Availability** | Consistency-র জন্য availability sacrifice করতে পারে | Availability সবসময় priority |
+| **Scalability** | Vertical scaling সহজ, horizontal কঠিন | Horizontal scaling সহজ |
+| **Performance** | Lock-এর কারণে তুলনামূলক ধীর | Lock-free, তাই দ্রুত |
+| **Data Model** | Relational (MySQL, PostgreSQL) | NoSQL (MongoDB, Cassandra, DynamoDB) |
+| **Use Case** | Banking, payment, inventory | Social media, analytics, logging |
+| **Complexity** | সহজ (single database) | জটিল (distributed system) |
+| **Failure Handling** | Rollback — আগের অবস্থায় ফেরত | Retry + reconciliation |
+| **বাংলাদেশ উদাহরণ** | bKash টাকা transfer | Prothom Alo news feed |
+
+---
+
+### কখন ACID ব্যবহার করবেন
+
+ACID ব্যবহার করবেন যখন **data-র সঠিকতা সবচেয়ে বেশি গুরুত্বপূর্ণ** এবং ভুল data-র পরিণাম মারাত্মক:
+
+1. **Banking ও Payment (bKash, Nagad):** টাকা transfer-এ ১ টাকাও কম-বেশি হলে চলবে না। প্রতিটি transaction atomic হতে হবে।
+2. **E-commerce Inventory (Daraz, Chaldal):** ১০টি product stock-এ আছে কিন্তু ১১ জনকে বিক্রি করা যাবে না — overselling ঠেকাতে ACID দরকার।
+3. **Seat Booking (Shohoz):** একটি bus-এর seat দুইজনকে বিক্রি করা যাবে না।
+4. **Payroll System:** কর্মচারীদের বেতন calculation-এ ভুল গ্রহণযোগ্য নয়।
+5. **Government Records (NID, Land Registry):** জাতীয় পরিচয়পত্র বা জমির দলিলে ভুল data catastrophic।
+
+---
+
+### কখন BASE ব্যবহার করবেন
+
+BASE ব্যবহার করবেন যখন **availability ও scalability বেশি গুরুত্বপূর্ণ** এবং সামান্য inconsistency গ্রহণযোগ্য:
+
+1. **Social Media Feed:** Facebook-এ post-এর like count কিছু সেকেন্ড দেরিতে update হলে কোনো ক্ষতি নেই।
+2. **Analytics ও Reporting:** Website-এর visitor count বা ad impression সাথে সাথে ১০০% accurate না হলেও চলে।
+3. **Logging ও Monitoring:** Application log কিছু মিলিসেকেন্ড দেরিতে write হলে সমস্যা নেই।
+4. **Search Indexing:** নতুন product যোগ করার পর search result-এ কয়েক সেকেন্ড দেরিতে আসলে গ্রহণযোগ্য।
+5. **Notification System:** Push notification কিছু সেকেন্ড দেরিতে পৌঁছালে ব্যবহারকারী বুঝতেও পারবে না।
+6. **Content Delivery (Prothom Alo, BD News):** সংবাদ সব server-এ সাথে সাথে sync না হলেও পাঠকের অভিজ্ঞতায় তেমন পার্থক্য হয় না।
+
+---
+
+### ACID থেকে BASE — Spectrum ডায়াগ্রাম
+
+```
+    ACID ◄──────────────────────────────────────────► BASE
+    (Strong Consistency)                    (Eventual Consistency)
+
+    ┌──────────┬───────────┬────────────┬────────────┬──────────┐
+    │ SERIALIZ │ STRONG    │ BOUNDED    │ EVENTUAL   │ EVENTUAL │
+    │ -ABLE    │ CONSISTEN │ STALENESS  │ CONSISTENT │ + AVAIL  │
+    ├──────────┼───────────┼────────────┼────────────┼──────────┤
+    │ MySQL    │PostgreSQL │ CosmosDB   │ Cassandra  │ DynamoDB │
+    │ InnoDB   │ default   │ configured │ default    │ default  │
+    ├──────────┼───────────┼────────────┼────────────┼──────────┤
+    │ bKash    │ Daraz     │ YouTube    │ Facebook   │ Log      │
+    │ Payment  │ Order     │ View Count │ News Feed  │ System   │
+    └──────────┴───────────┴────────────┴────────────┴──────────┘
+
+    ◄─── বেশি Consistent ───────────────── বেশি Available ───►
+    ◄─── কম Scalable ───────────────────── বেশি Scalable ────►
+    ◄─── বেশি Latency ──────────────────── কম Latency ───────►
+```
+
+---
+
+### বাস্তব উদাহরণ: bKash vs Facebook
+
+#### উদাহরণ ১: bKash Send Money (ACID)
+
+bKash-এ ১০০০ টাকা পাঠানোর সময় কী হয়:
+
+```
+    Sender: 01712345678          Receiver: 01898765432
+    Balance: ৫০০০ টাকা           Balance: ২০০০ টাকা
+
+    ──── ACID Transaction শুরু ────
+    │                              
+    │  ① Sender balance check     
+    │     ৫০০০ >= ১০০০ ✓          
+    │                              
+    │  ② Sender থেকে কর্তন       
+    │     ৫০০০ - ১০০০ = ৪০০০      
+    │                              
+    │  ③ Receiver-এ যোগ           
+    │     ২০০০ + ১০০০ = ৩০০০      
+    │                              
+    │  ④ Transaction log তৈরি     
+    │                              
+    ──── COMMIT (সব সফল) ──────
+
+    ফলাফল: Sender ৪০০০, Receiver ৩০০০
+    (কোনো ধাপ fail করলে সব ROLLBACK)
+```
+
+#### উদাহরণ ২: Facebook News Feed Like (BASE)
+
+Facebook-এ কেউ post-এ like দিলে কী হয়:
+
+```
+    User "করিম" liked a post
+    
+    ──── BASE Approach ────
+    │
+    │  ① Like event queue-তে পাঠাও
+    │     (সাথে সাথে response: "Liked!")
+    │
+    │  ② Server A: like count = ১৫০
+    │     Server B: like count = ১৪৯  (এখনো sync হয়নি)
+    │     Server C: like count = ১৫০
+    │
+    │  ③ Background sync চলছে...
+    │
+    │  ④ কিছুক্ষণ পর সব server:
+    │     like count = ১৫০ ✓
+    │
+    ──── Eventually Consistent ────
+
+    User অভিজ্ঞতা: সাথে সাথে "Liked!" দেখে
+    (কয়েক সেকেন্ড inconsistency গ্রহণযোগ্য)
+```
+
+---
+
+### PHP ও JavaScript কোড উদাহরণ
+
+#### PHP — ACID Transaction (bKash Send Money)
+
+```php
+<?php
+// bKash Send Money — ACID Transaction (MySQL/PDO)
+function sendMoney(PDO $pdo, string $sender, string $receiver, float $amount): array
+{
+    $pdo->beginTransaction();
+
+    try {
+        // ① Sender-এর balance check ও lock
+        $stmt = $pdo->prepare(
+            "SELECT balance FROM wallets WHERE phone = :phone FOR UPDATE"
+        );
+        $stmt->execute([':phone' => $sender]);
+        $senderBalance = $stmt->fetchColumn();
+
+        if ($senderBalance < $amount) {
+            throw new Exception("অপর্যাপ্ত ব্যালেন্স। বর্তমান: ৳{$senderBalance}");
+        }
+
+        // ② Sender থেকে টাকা কর্তন
+        $pdo->prepare("UPDATE wallets SET balance = balance - :amount WHERE phone = :phone")
+            ->execute([':amount' => $amount, ':phone' => $sender]);
+
+        // ③ Receiver-এ টাকা যোগ
+        $pdo->prepare("UPDATE wallets SET balance = balance + :amount WHERE phone = :phone")
+            ->execute([':amount' => $amount, ':phone' => $receiver]);
+
+        // ④ Transaction log
+        $pdo->prepare(
+            "INSERT INTO transaction_log (sender, receiver, amount, status, created_at)
+             VALUES (:sender, :receiver, :amount, 'SUCCESS', NOW())"
+        )->execute([
+            ':sender'   => $sender,
+            ':receiver' => $receiver,
+            ':amount'   => $amount,
+        ]);
+
+        $pdo->commit();
+        return ['success' => true, 'message' => "৳{$amount} সফলভাবে পাঠানো হয়েছে"];
+
+    } catch (Exception $e) {
+        $pdo->rollBack();
+        return ['success' => false, 'message' => $e->getMessage()];
+    }
+}
+
+// ব্যবহার
+$result = sendMoney($pdo, '01712345678', '01898765432', 1000);
+echo $result['message'];
+```
+
+#### JavaScript — BASE Approach (Facebook-style Like System)
+
+```javascript
+// Facebook-style Like — BASE Approach (Node.js + Redis + MongoDB)
+const Redis = require('ioredis');
+const { MongoClient } = require('mongodb');
+
+const redis = new Redis();
+const mongo = new MongoClient('mongodb://localhost:27017');
+
+// ① Like event গ্রহণ — সাথে সাথে response দাও
+async function likePost(userId, postId) {
+    // Redis-এ সাথে সাথে count বাড়াও (fast, in-memory)
+    await redis.hincrby(`post:${postId}:likes`, 'count', 1);
+    await redis.sadd(`post:${postId}:liked_by`, userId);
+
+    // Queue-তে event পাঠাও (background-এ process হবে)
+    await redis.lpush('like_events', JSON.stringify({
+        userId,
+        postId,
+        timestamp: Date.now(),
+    }));
+
+    // সাথে সাথে user-কে response
+    return { success: true, message: 'লাইক দেওয়া হয়েছে!' };
+}
+
+// ② Background worker — eventually MongoDB-তে persist করো
+async function processLikeEvents() {
+    const db = mongo.db('social_app');
+
+    while (true) {
+        const event = await redis.brpop('like_events', 0);
+        const data = JSON.parse(event[1]);
+
+        try {
+            // MongoDB-তে permanent storage (eventual consistency)
+            await db.collection('posts').updateOne(
+                { _id: data.postId },
+                {
+                    $inc: { likeCount: 1 },
+                    $addToSet: { likedBy: data.userId },
+                }
+            );
+            console.log(`Post ${data.postId} — like persisted (eventually consistent)`);
+        } catch (err) {
+            // Fail হলে retry queue-তে ফেরত পাঠাও
+            await redis.lpush('like_events_retry', JSON.stringify(data));
+            console.error('Like persist fail, retry queue-তে রাখা হলো:', err.message);
+        }
+    }
+}
+
+// ③ Like count পড়ো — Redis থেকে (fast, কিন্তু soft state)
+async function getLikeCount(postId) {
+    const count = await redis.hget(`post:${postId}:likes`, 'count');
+    return parseInt(count) || 0;
+}
+
+// ব্যবহার
+likePost('user_karim_01', 'post_12345').then(console.log);
+```
+
+---
+
+### Decision Guide — ACID নাকি BASE বেছে নেবেন?
+
+নিচের flowchart অনুসরণ করুন:
+
+```
+    আপনার system-এ data ভুল হলে কী হবে?
+    │
+    ├── 💰 টাকা/সম্পদ হারাবে?
+    │   └── ✅ ACID ব্যবহার করুন
+    │       উদাহরণ: bKash, Nagad, Bank, Daraz payment
+    │
+    ├── 📋 আইনি/নিয়ন্ত্রক সমস্যা হবে?
+    │   └── ✅ ACID ব্যবহার করুন
+    │       উদাহরণ: NID, Tax, Land Registry
+    │
+    ├── 😕 User বিরক্ত হবে কিন্তু ক্ষতি নেই?
+    │   └── ✅ BASE ব্যবহার করুন
+    │       উদাহরণ: Like count, view count, notification
+    │
+    └── 🤷 কেউ খেয়ালও করবে না?
+        └── ✅ BASE ব্যবহার করুন
+            উদাহরণ: Analytics, logging, search index
+```
+
+#### Quick Reference টেবিল
+
+| প্রশ্ন | উত্তর হ্যাঁ → | উত্তর না → |
+|---|---|---|
+| ভুল data-তে আর্থিক ক্ষতি হবে? | ACID | পরের প্রশ্নে যান |
+| Real-time accuracy দরকার? | ACID | পরের প্রশ্নে যান |
+| লক্ষাধিক concurrent user আছে? | BASE বিবেচনা করুন | ACID রাখুন |
+| কয়েক সেকেন্ড delay গ্রহণযোগ্য? | BASE ব্যবহার করুন | ACID ব্যবহার করুন |
+| Multiple data center/region আছে? | BASE উপযুক্ত | ACID যথেষ্ট |
+
+#### হাইব্রিড পদ্ধতি — বাস্তব সিস্টেমে
+
+বেশিরভাগ production system-এ ACID ও BASE **একসাথে** ব্যবহৃত হয়:
+
+```
+    ┌─────────────────────────────────────────────┐
+    │           bKash System Architecture          │
+    │                                              │
+    │  ┌─────────────┐      ┌─────────────────┐   │
+    │  │  Payment    │      │  Notification   │   │
+    │  │  Service    │      │  Service        │   │
+    │  │  (ACID) 🔒  │─────▶│  (BASE) 📬      │   │
+    │  │  MySQL      │      │  Redis + Queue  │   │
+    │  └─────────────┘      └─────────────────┘   │
+    │                                              │
+    │  ┌─────────────┐      ┌─────────────────┐   │
+    │  │  Account    │      │  Analytics      │   │
+    │  │  Service    │      │  Service        │   │
+    │  │  (ACID) 🔒  │─────▶│  (BASE) 📊      │   │
+    │  │  PostgreSQL │      │  Elasticsearch  │   │
+    │  └─────────────┘      └─────────────────┘   │
+    └─────────────────────────────────────────────┘
+
+    মূল কথা: টাকার হিসাব → ACID
+              বাকি সব     → BASE
+```
+
+> **💡 মনে রাখবেন:** ACID আর BASE কোনো "ভালো বনাম খারাপ" প্রশ্ন নয়। এটি একটি **trade-off**। আপনার system-এর requirement অনুযায়ী সঠিক model বেছে নিন। বাংলাদেশের fintech-এ payment ও balance-র জন্য সবসময় ACID, আর notification, feed, analytics-এর জন্য BASE — এই নীতি মেনে চলুন।

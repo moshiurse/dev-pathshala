@@ -19,6 +19,7 @@
 | ৯ | [অ্যাসিঙ্ক/অ্যাওয়েট](./async-await.md) | Async/Await, Promises, Coroutines, Non-blocking Patterns |
 | ১০ | [সার্কিট ব্রেকার](./circuit-breaker.md) | Circuit Breaker (CLOSED/OPEN/HALF_OPEN), opossum, resilience4j, Retry/Bulkhead/Fallback |
 | ১১ | [ব্যাকপ্রেসার](./backpressure.md) | Producer-Consumer Imbalance, Node Streams, RxJS, Reactive Streams, Kafka Pause/Resume |
+| ১২ | [গ্রেসফুল শাটডাউন](./graceful-shutdown.md) | Signal Handling, In-flight Requests, DB/Queue Cleanup, K8s/Docker, LB Deregistration |
 
 ---
 

@@ -16,6 +16,7 @@
 | ৫ | DNS | [dns.md](./dns.md) | DNS Resolution, Record Types, Caching, DNSSEC, Load Balancing |
 | ৬ | TLS/SSL | [tls-ssl.md](./tls-ssl.md) | TLS 1.2 vs 1.3, Certificate Chain, Let's Encrypt, mTLS |
 | ৭ | WebRTC | [webrtc.md](./webrtc.md) | ICE/STUN/TURN, SDP, P2P Media, DataChannel, SFU/MCU (Mediasoup/LiveKit), coturn, NAT Traversal |
+| ৮ | URL টাইপ করলে কী হয়? | [url-to-page.md](./url-to-page.md) | URL Parsing, DNS, TCP, TLS, HTTP Request, Server Processing, Browser Rendering |
 
 ---
 
