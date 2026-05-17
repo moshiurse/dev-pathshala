@@ -39,6 +39,26 @@
 | ১৮ | লোড শেডিং | [load-shedding.md](./load-shedding.md) | Graceful Degradation, Priority-based Drop, Adaptive Concurrency, Retry-After, BD Surge Examples |
 | ১৯ | RabbitMQ / AMQP | [rabbitmq-amqp.md](./rabbitmq-amqp.md) | AMQP 0-9-1, Exchanges (direct/topic/fanout), Quorum/Stream Queues, DLX, Federation, vs Kafka |
 
+### 🌍 রিয়েল-ওয়ার্ল্ড সিস্টেম ডিজাইন (Real-World Examples)
+
+> বাস্তব জীবনের জনপ্রিয় সিস্টেমগুলোর বিস্তারিত কেস স্টাডি — [সম্পূর্ণ সূচি](./real-world-examples/README.md)
+
+| # | সিস্টেম | ফাইল | মূল বিষয়বস্তু |
+|---|---------|------|--------------|
+| ১ | 🔗 URL শর্টনার (TinyURL) | [url-shortener-tinyurl.md](./real-world-examples/url-shortener-tinyurl.md) | Base62, Counter Range, Bloom Filter, Analytics Pipeline |
+| ২ | 🎬 টিকেটিং সিস্টেম (BookMyShow) | [ticketing-system-bookmyshow.md](./real-world-examples/ticketing-system-bookmyshow.md) | Seat Locking, Distributed Lock, Virtual Queue, Dynamic Pricing |
+| ৩ | 📰 নিউজ ফিড (Twitter/Instagram) | [news-feed-twitter-instagram.md](./real-world-examples/news-feed-twitter-instagram.md) | Fan-out Write/Read, Hybrid Approach, Feed Ranking |
+| ৪ | 🔔 নোটিফিকেশন সিস্টেম | [notification-system.md](./real-world-examples/notification-system.md) | Multi-channel, Priority Queue, Retry & Dedup |
+| ৫ | 💬 চ্যাট অ্যাপ (WhatsApp) | [chat-application-whatsapp.md](./real-world-examples/chat-application-whatsapp.md) | WebSocket, E2E Encryption, Offline Queue, Group Fan-out |
+| ৬ | 🏷️ অকশন প্ল্যাটফর্ম (eBay) | [auction-platform-ebay.md](./real-world-examples/auction-platform-ebay.md) | Real-time Bidding, Proxy Bid, Escrow, Fraud Detection |
+| ৭ | 🏠 রেন্টাল প্ল্যাটফর্ম (Airbnb) | [rental-platform-airbnb.md](./real-world-examples/rental-platform-airbnb.md) | Geo-search, Booking Calendar, Dynamic Pricing |
+| ৮ | ☁️ ক্লাউড স্টোরেজ (Google Drive) | [cloud-storage-google-drive.md](./real-world-examples/cloud-storage-google-drive.md) | Block-level Sync, Chunked Upload, Deduplication |
+| ৯ | 🎥 ভিডিও শেয়ারিং (YouTube) | [video-sharing-youtube.md](./real-world-examples/video-sharing-youtube.md) | Transcoding Pipeline, HLS/DASH, Adaptive Bitrate, CDN |
+| ১০ | 🔍 সার্চ ইঞ্জিন (Google) | [search-engine-google.md](./real-world-examples/search-engine-google.md) | Web Crawler, Inverted Index, PageRank, Autocomplete |
+| ১১ | 🛒 ই-কমার্স (Amazon) | [ecommerce-platform-amazon.md](./real-world-examples/ecommerce-platform-amazon.md) | Saga Pattern, Inventory Lock, Payment Idempotency |
+| ১২ | 🚕 ট্যাক্সি হেইলিং (Uber) | [taxi-hailing-uber.md](./real-world-examples/taxi-hailing-uber.md) | Geohash/H3, Driver Matching, Surge Pricing |
+| ১৩ | 📝 কোলাবোরেটিভ এডিটর (Google Docs) | [collaborative-editor-google-docs.md](./real-world-examples/collaborative-editor-google-docs.md) | OT vs CRDT, Real-time Sync, Conflict Resolution |
+
 ---
 
 ## 🗺️ সিস্টেম কম্পোনেন্ট সম্পর্ক
