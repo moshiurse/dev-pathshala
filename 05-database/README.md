@@ -27,6 +27,7 @@
 | ১৬ | Elasticsearch | [elasticsearch.md](./elasticsearch.md) | Cluster/Shards, Mapping, BM25, Bangla Analyzer, kNN/Hybrid Search, ILM, Daraz Case Study |
 | ১৭ | Solr | [solr.md](./solr.md) | SolrCloud, ZooKeeper, edismax, JSON Facet API, Solr vs Elasticsearch, Migration Patterns |
 | ১৮ | Redis ডিপ ডাইভ | [redis-deep-dive.md](./redis-deep-dive.md) | Data Structures, Pub/Sub, Streams, Lua, Sentinel, Cluster, Cache Patterns, Distributed Lock |
+| ১৯ | Redis Stack | [redis-stack.md](./redis-stack.md) | RediSearch, RedisJSON, RedisBloom, TimeSeries, RedisGraph, Product Search, JSON Documents, Redis vs Elasticsearch |
 
 ---
 

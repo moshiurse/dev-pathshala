@@ -21,6 +21,7 @@
 | ১০ | লেয়ার্ড আর্কিটেকচার | [layered-architecture.md](./layered-architecture.md) | Presentation, Business, Persistence Layer, Strict vs Relaxed Layering |
 | ১১ | পাইপ অ্যান্ড ফিল্টার | [pipe-and-filter.md](./pipe-and-filter.md) | Pipeline Pattern, Data Transformation, Middleware Chain, ETL |
 | ১২ | রেন্ডারিং প্যাটার্ন | [rendering-patterns.md](./rendering-patterns.md) | SSR, CSR, SSG, ISR, Hydration, Island Architecture, Inertia.js |
+| ১৩ | Lambda Architecture | [lambda-architecture.md](./lambda-architecture.md) | Lambda/Kappa তুলনা, Batch/Speed/Serving Layer, Immutable Master Dataset, Replay, Bangladesh analytics cases |
 
 ---
 

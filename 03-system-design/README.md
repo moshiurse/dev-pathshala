@@ -13,14 +13,18 @@
 |---|-------|------|--------------|
 | ১ | মূল ধারণা | [fundamentals.md](./fundamentals.md) | Scalability, Availability, Consistency, Latency, Estimation, RESHADED |
 | ২ | লোড ব্যালেন্সিং | [load-balancing.md](./load-balancing.md) | ৮টি Algorithm, Nginx/HAProxy, AWS ALB/NLB, GSLB, Auto Scaling |
-| ৩ | ক্যাশিং | [caching.md](./caching.md) | ৫টি Strategy, Redis Deep Dive, CDN, Cache Stampede, Multi-tier |
-| ৪ | ডাটাবেস স্কেলিং | [database-scaling.md](./database-scaling.md) | Sharding, Consistent Hashing, Read Replicas, Federation, NewSQL |
-| ৫ | মেসেজ কিউ | [message-queue.md](./message-queue.md) | RabbitMQ, Kafka, SQS, Redis Streams, Laravel Queue, BullMQ |
-| ৬ | CAP থিওরেম | [cap-theorem.md](./cap-theorem.md) | CAP/PACELC, Quorum, Vector Clocks, CRDTs, ১৭+ DB Classification |
-| ৭ | রেট লিমিটিং | [rate-limiting.md](./rate-limiting.md) | ৫টি Algorithm, Redis Lua, Nginx, Tiered Plans, DDoS Mitigation |
-| ৮ | কনসিস্টেন্ট হ্যাশিং | [consistent-hashing.md](./consistent-hashing.md) | Hash Ring, Virtual Nodes, Distributed Systems |
-| ৯ | CDN | [cdn.md](./cdn.md) | Push vs Pull CDN, Cache Invalidation, Edge Computing |
-| ১০ | ফল্ট টলারেন্স ও রেজিলিয়েন্স | [fault-tolerance.md](./fault-tolerance.md) | Circuit Breaker, Retry, Timeout, Bulkhead, Fallback, Chaos Engineering |
+| ৩ | মাল্টি-টিয়ার আর্কিটেকচার | [multi-tier-architecture.md](./multi-tier-architecture.md) | Physical tiers, DMZ, Load Balancers, Independent Scaling, Cloud Deployment |
+| ৪ | ক্যাশিং | [caching.md](./caching.md) | ৫টি Strategy, Redis Deep Dive, CDN, Cache Stampede, Multi-tier |
+| ৫ | ডাটাবেস স্কেলিং | [database-scaling.md](./database-scaling.md) | Sharding, Consistent Hashing, Read Replicas, Federation, NewSQL |
+| ৬ | মেসেজ কিউ | [message-queue.md](./message-queue.md) | RabbitMQ, Kafka, SQS, Redis Streams, Laravel Queue, BullMQ |
+| ৭ | CAP থিওরেম | [cap-theorem.md](./cap-theorem.md) | CAP/PACELC, Quorum, Vector Clocks, CRDTs, ১৭+ DB Classification |
+| ৮ | রেট লিমিটিং | [rate-limiting.md](./rate-limiting.md) | ৫টি Algorithm, Redis Lua, Nginx, Tiered Plans, DDoS Mitigation |
+| ৯ | কনসিস্টেন্ট হ্যাশিং | [consistent-hashing.md](./consistent-hashing.md) | Hash Ring, Virtual Nodes, Distributed Systems |
+| ১০ | CDN | [cdn.md](./cdn.md) | Push vs Pull CDN, Cache Invalidation, Edge Computing |
+| ১১ | ফল্ট টলারেন্স ও রেজিলিয়েন্স | [fault-tolerance.md](./fault-tolerance.md) | Circuit Breaker, Retry, Timeout, Bulkhead, Fallback, Chaos Engineering |
+| ১২ | বিগ ডাটা প্রসেসিং | [big-data-processing.md](./big-data-processing.md) | Batch, Stream, Spark, Lakehouse, ETL/ELT, Partitioning, Monitoring, Bangladesh Examples |
+| ১৩ | ইভেন্ট-স্ট্রিম উইন্ডো স্ট্র্যাটেজি | [event-stream-strategies.md](./event-stream-strategies.md) | Infinite Streams, Tumbling/Sliding/Session Window, Watermarks, Allowed Lateness, Redis-backed PHP + Node.js |
+| ১৪ | স্ট্রিম টাইম সেম্যান্টিক্স | [stream-time-semantics.md](./stream-time-semantics.md) | Event Time, Processing Time, Ingestion Time, Watermarks, Late Events, Triggers |
 
 ### 📋 কেস স্টাডি (System Design Interviews)
 
